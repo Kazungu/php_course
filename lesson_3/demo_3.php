@@ -60,6 +60,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 }
 /*$_POST
-PHP $_POST is a widely used to collect form data after submmiting an HTML form with method="POST".
+PHP $_POST is a widely used to collect form data after submiting an HTML form with method="POST".
 
 */
