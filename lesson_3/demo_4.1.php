@@ -68,7 +68,7 @@ function val_data($data){
     <form action="<? echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
         <div class="form-group">
             <label for="FirstName">First Name: </label>
-            <input type="text" class="form-control" id="Fname" name="firstName" required>
+            <input type="text" class="form-control" id="Fname" name="firstName">
             <span class="text-danger">*<?php echo $firstnameErr?></span>
         </div>
         <div class="form-group">
@@ -83,7 +83,7 @@ function val_data($data){
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" name="password" required>
+            <input type="password" class="form-control" id="pwd" name="password">
             <span class="text-danger">*<?php echo $passwordErr?></span>
         </div>
         <div class="form-group form-check">
