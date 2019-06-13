@@ -7,7 +7,7 @@
 //proper form validation inhibits hackers and spammers from getting access to your form data.
 $firstname = $lastname = $email = $password="";
 $firstnameErr = $lastnameErr = $emailErr = $passwordErr = "";
-
+$success_msg="";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //$FirstName = val_data($_POST['firstName']);
     //$LastName = val_data($_POST['lastName']);
@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($_POST['password'])){
         $passwordErr = "password name is required..";
     }else{
-        $password = $_POST['password'];
+        $password = password_strength($_POST['password']);
     }
 }
 function val_data($data){
@@ -46,8 +46,30 @@ function val_data($data){
     $data = htmlspecialchars($data);
     return $data;
 }
-
-
+/*
+ * #password should have more than 8 and less special characters
+ * password should have special characters.
+ *
+ * Algorithms.
+ * //function to wrap the code
+ * needs an argument.
+ * 8>=password<=24
+ *special characters
+ * return response -ve or +ve
+ * '/[\'^£$%&*()}{@#~?><>,|=_+¬-]/'
+ * */
+function password_strength($password_data){
+    $password_length =strlen($password_data);
+    if($password_length <= 8 && $password_length >=24){
+        if(preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $password_data)){
+            $success_msg = "password is good";
+            return $success_msg;
+        }
+    }else{
+        $passwordErr =" password be more than 8 character and less than 24 character and has special characters";
+        return $passwordErr;
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,6 +82,7 @@ function val_data($data){
 <body>
 <div class="container">
     <h2>Welcome</h2>
+    <span><?php echo $success_msg?></span>
     <form action="<? echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
         <div class="form-group">
             <label for="FirstName">First Name: </label>
@@ -89,8 +112,6 @@ function val_data($data){
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-<p>Welcome <?php echo $_POST['firstName']." ".$_POST['lastName']?> to Jitters Cafe</p>
-<p>Your Email is <?php echo $_POST['email']?></p>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
