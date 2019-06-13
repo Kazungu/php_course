@@ -41,7 +41,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 function val_data($data){
     $data = trim($data);
-    // $data = stripslashes($data);
     $data = str_replace("/","",$data);
     $data = str_replace("\\","",$data);
     $data = htmlspecialchars($data);
@@ -53,13 +52,9 @@ function val_data($data){
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <title>php forms</title>
 </head>
 <body>
@@ -68,12 +63,12 @@ function val_data($data){
     <form action="<? echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
         <div class="form-group">
             <label for="FirstName">First Name: </label>
-            <input type="text" class="form-control" id="Fname" name="firstName">
+            <input type="text" class="form-control" id="Firstname" name="firstName">
             <span class="text-danger">*<?php echo $firstnameErr?></span>
         </div>
         <div class="form-group">
             <label for="LastName">Last Name:</label>
-            <input type="text" class="form-control" id="Lname" name="lastName" >
+            <input type="text" class="form-control" id="Lastname" name="lastName" >
             <span class="text-danger">*<?php echo $lastnameErr?></span>
         </div>
         <div class="form-group">
@@ -94,8 +89,8 @@ function val_data($data){
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-<!--<p>Welcome <?php #echo $_POST['firstName']." ".$_POST['lastName']?> to Jitters Cafe</p>
-<p>Your Email is <?php #echo $_POST['email']?></p>-->
+<p>Welcome <?php echo $_POST['firstName']." ".$_POST['lastName']?> to Jitters Cafe</p>
+<p>Your Email is <?php echo $_POST['email']?></p>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
