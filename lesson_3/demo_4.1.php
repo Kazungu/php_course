@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($_POST['password'])){
         $passwordErr = "password name is required..";
     }else{
-        $password = password_strength($_POST['password']);
+        $password = $_POST['password'];
     }
 }
 function val_data($data){
@@ -63,13 +63,14 @@ function password_strength($password_data){
     if($password_length <= 8 && $password_length >=24){
         if(preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $password_data)){
             $success_msg = "password is good";
-            return $success_msg;
+            echo $success_msg;
         }
     }else{
         $passwordErr =" password be more than 8 character and less than 24 character and has special characters";
-        return $passwordErr;
+        echo $passwordErr;
     }
 }
+password_strength("pass1234@#$");
 ?>
 <!doctype html>
 <html lang="en">
