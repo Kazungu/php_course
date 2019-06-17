@@ -37,6 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $passwordErr = "password name is required..";
     }else{
         $password = $_POST['password'];
+        //password_strength($password);
     }
 }
 function val_data($data){
@@ -70,7 +71,7 @@ function password_strength($password_data){
         echo $passwordErr;
     }
 }
-password_strength("pass1234@#$");
+//password_strength("pass1234@#$");
 ?>
 <!doctype html>
 <html lang="en">
