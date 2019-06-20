@@ -36,8 +36,8 @@ if(mysqli_query($conn,$sql)){
     echo "Error".$sql.mysqli_error($conn)."<br>";
 }*/
 //selecting data from a table(s)
-//SELECT column_one, column_two FROM tablename
-//SELECT * FROM tablename
+//SELECT column_one, column_two FROM table_name
+//SELECT * FROM table_name
 
 $sql = "SELECT id, firstname,lastname FROM student";
 $result = mysqli_query($conn,$sql);
