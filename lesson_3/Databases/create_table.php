@@ -17,4 +17,12 @@ if($conn->query($sql)=== TRUE){
 }else{
     echo"ERROR: ".$sql . "<br>". $conn->error;
 }
+
+$sql = "INSERT INTO student(firstname,lastname,reg_date)
+        VALUES('Terry', 'Mukiri',NULL);";
+if($conn->query($sql) === TRUE){
+    echo "new data entered successfully";
+}else{
+    echo "Error: ".$sql. "<br>". $conn->error;
+}
 mysqli_close($conn);
