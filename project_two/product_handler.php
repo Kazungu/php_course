@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['btn_submit'])){
+if (isset($_POST['btn_submit']) && isset($_POST['shoe_name']) && isset($_POST['shoe_size']) && isset($_POST['shoe_price'])){
     $name= $_POST['shoe_name'];
     $size = $_POST['shoe_size'];
     $price= $_POST['shoe_price'];
