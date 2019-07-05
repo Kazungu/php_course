@@ -26,10 +26,10 @@ include 'config.php';
       echo "<tr>
             <td>$ID</td>
             <td>$Name</td>
-            <td>$size</td>
+            <td>$Size</td>
             <td>$price</td>
             <td><a href='delete.php?shoe_id=$ID' class='btn btn-danger'>Delete</a></td>
-            <td><a href='update.php?shoe_id=$ID&shoe_name=$Name&shoe_size=$size&shoe_price=$price' class='btn btn-info'>Update</a></td>
+            <td><a href='update.php?shoe_id=$ID&shoe_name=$Name&shoe_size=$Size&shoe_price=$price' class='btn btn-info'>Update</a></td>
             
            </tr>";
   }
