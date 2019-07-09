@@ -8,8 +8,8 @@
     <title>WeConnect</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">WeConnect</a>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="home.php">WeConnect</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>

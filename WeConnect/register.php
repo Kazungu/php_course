@@ -94,10 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <?php include "header.php"?>
-<div class="container" id="cont_one">
+<div class="container" id="top_section">
     <div class="wrapper">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
+        <h2 class="text-center">Sign Up</h2>
+        <p class="text-center">Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>

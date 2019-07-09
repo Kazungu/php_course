@@ -1,11 +1,11 @@
 <?php include "header.php"?>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h2 class="text-center">WELCOME TO WECONNECT</h2>
-        <h6 class="text-center">WeConnect provides a platform that brings businesses and individuals together</h6>
+<header class="bg-primary text-white" id="tophead">
+    <div class="container text-center">
+      <h1>WECONNECT</h1>
+      <p class="lead">WeConnect provides a platform that brings businesses and individuals together</p>
     </div>
-</div>
+  </header>
 <div class="container">
     <div class="media mt-3">
         <img src="image/cloud.png" class="align-self-center mr-3" style="width:100px">
